@@ -1,32 +1,26 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Coursesales from "./Coursesales";
+import Course from "./course";
 
 class App extends Component {
   render() {
     var courses = [
-      { name: "Complete Web Dev", price: 1999 },
-      { name: "Complete App Dev", price: 1222 },
-      { name: "Complete Pentesting Dev", price: 344 },
-      { name: "Complete Front end Dev", price: 1999 }
+      { name: "Complete Web development", price: 199 },
+      { name: "ReactJS development", price: 2000 },
+      { name: "Complete Front End development", price: 1888 },
+      { name: "Complete Back End development", price: 1999 }
     ];
 
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p />
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
         </header>
-        <Coursesales items={courses} />
+        <Course item={courses} />
       </div>
     );
   }

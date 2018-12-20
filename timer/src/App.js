@@ -1,25 +1,29 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Timer from "./Timer";
+import Timer from "./timer";
 
 class App extends Component {
+  changer() {
+    this.setState({ text: "ano" });
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      text: ""
+    };
+
+    this.changer = this.changer.bind(this);
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>Hello World!!</p>
-          <Timer start={Date.now()} />
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <input type="text" onChange={this.changer} />
+
+        <h1>Welcome to the Timer App..</h1>
+        <h3>{this.props.text}</h3>
+        <Timer />
       </div>
     );
   }

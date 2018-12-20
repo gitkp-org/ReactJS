@@ -91,7 +91,7 @@ class Cars extends Component {
         <p>
           <div>
             {this.props.coolCars.map((item, i) => {
-              return <p key={i}>{item} </p>;
+              return <p key={i}> {item} </p>;
             })}
           </div>
         </p>
@@ -128,6 +128,18 @@ class Body extends Component {
 }
 
 class Numbers extends Component {
+  componentWillMount() {
+    console.log("Component will Mount called!!");
+  }
+
+  componentDidMount() {
+    console.log("Component did Mount called!!");
+  }
+
+  componentWillReceiveProps() {
+    console.log("Component receive Mount called!!");
+  }
+
   render() {
     return (
       <div>
