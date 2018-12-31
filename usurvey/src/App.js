@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import Usurvey from "./Usurvey";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Welcome to React Router App!!</h1>
+        <Usurvey />
       </div>
     );
   }
