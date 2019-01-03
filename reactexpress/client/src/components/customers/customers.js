@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+const axios = require("axios");
 
 class Customer extends Component {
   constructor() {
@@ -9,11 +10,10 @@ class Customer extends Component {
   }
 
   componentDidMount() {
-    fetch("/api/customers/")
-      .then(res => res.json())
-      .then(customers =>
-        this.setState({ customers }, () => console.log(this.state))
-      );
+    axios
+      .get("/api/customers")
+      .then(customers => this.setState({ customers: customers.data }))
+      .catch(err => console.log(err));
   }
 
   render() {
