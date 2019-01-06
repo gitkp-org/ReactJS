@@ -1,6 +1,14 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const bodyparser = require("body-parser");
+
+app.use(bodyparser.urlencoded({ extended: false }));
+app.use(bodyparser.json());
+
+app.get("/", (req, res) => {
+  res.send("hey there!!");
+});
 
 app.get("/api/customers", (req, res) => {
   const customers = [
@@ -11,6 +19,11 @@ app.get("/api/customers", (req, res) => {
     { name: "Jack Ma", age: 50, location: "Beijing" }
   ];
   res.json(customers);
+});
+
+app.post("/subs", (req, res) => {
+  console.log(req.body);
+  res.json(req.body);
 });
 
 if (process.env.NODE_ENV === "production") {

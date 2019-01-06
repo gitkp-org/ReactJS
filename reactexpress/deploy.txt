@@ -1,0 +1,5 @@
+package.json -- server
+
+"server": "nodemon index.js --ignore client",
+"dev": "concurrently \"npm run server\" \"npm start\"",
+"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
