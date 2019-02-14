@@ -1,3 +1,5 @@
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 import React, { Component } from "react";
 const axios = require("axios");
 
@@ -40,9 +42,21 @@ class Customer extends Component {
           ))}
         </ul>
         <div>
-          <input type="text" ref="one" placeholder="one" />
-          <input type="text" ref="two" placeholder="two" />
-          <button onClick={this.getTrack}>Submit</button>
+          <input type="text" variant="outlined" ref="one" placeholder="one" />
+          <br />
+          <br />
+          <input
+            margin="normal"
+            variant="outlined"
+            ref="two"
+            id="outlined-name"
+            placeholder="two"
+          />
+          <br />
+          <br />
+          <Button variant="contained" color="secondary" onClick={this.getTrack}>
+            Submit
+          </Button>
         </div>
       </div>
     );

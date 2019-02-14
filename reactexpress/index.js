@@ -6,9 +6,9 @@ const bodyparser = require("body-parser");
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
-app.get("/", (req, res) => {
-  res.send("hey there!!");
-});
+// app.get("/", (req, res) => {
+//   res.send("hey there!!");
+// });
 
 app.get("/api/customers", (req, res) => {
   const customers = [
