@@ -1,0 +1,22 @@
+#formData {
+  margin: auto;
+  text-align: center;
+}
+
+input[type="text"] {
+  width: 50%;
+  height: 30px;
+}
+
+button {
+  width: auto;
+  height: 40px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: black;
+  color: white;
+  cursor: pointer;
+}
